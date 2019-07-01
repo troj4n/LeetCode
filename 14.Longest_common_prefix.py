@@ -25,3 +25,30 @@ class Solution:
             #print (prefix)
         return (prefix)
         
+######################################################  solution2 (chracter matching) ###################################
+
+class Solution:
+    
+    def minimimLength(self,strs,n):
+        min_len=len(strs[0])
+        for i in range(1,n):
+            x=len(strs[i])
+            if x<min_len:
+                min_len=x
+        return min_len 
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+        n=len(strs)
+        if n==1:
+            return strs[0]
+        
+        result=""
+        minlen=self.minimimLength(strs,n)
+        for i in range(minlen):
+            curr=strs[0][i]
+            for j in range(1,n):
+                if strs[j][i]!=curr:
+                    return result
+            result=result+curr
+        return (result)
