@@ -1,4 +1,4 @@
-################################### Solution 1 ########################################
+################################### Solution 1 (Word by Word matching) ########################################
 class Solution:
     def commonPrefix(self,str1,str2):
         result=""
